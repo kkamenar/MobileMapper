@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9F458A611D1ADE410087D347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F458A601D1ADE410087D347 /* AppDelegate.swift */; };
-		9F458A631D1ADE410087D347 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F458A621D1ADE410087D347 /* ViewController.swift */; };
 		9F458A661D1ADE410087D347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F458A641D1ADE410087D347 /* Main.storyboard */; };
 		9F458A691D1ADE410087D347 /* MobileMapper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F458A671D1ADE410087D347 /* MobileMapper.xcdatamodeld */; };
 		9F458A6B1D1ADE410087D347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F458A6A1D1ADE410087D347 /* Assets.xcassets */; };
 		9F458A6E1D1ADE410087D347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F458A6C1D1ADE410087D347 /* LaunchScreen.storyboard */; };
 		9F458A791D1ADE410087D347 /* MobileMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F458A781D1ADE410087D347 /* MobileMapperTests.swift */; };
 		9F458A841D1ADE410087D347 /* MobileMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F458A831D1ADE410087D347 /* MobileMapperUITests.swift */; };
+		9F458A921D1ADE510087D347 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F458A911D1ADE510087D347 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		9F458A5D1D1ADE410087D347 /* MobileMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F458A601D1ADE410087D347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F458A621D1ADE410087D347 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F458A651D1ADE410087D347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F458A681D1ADE410087D347 /* MobileMapper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MobileMapper.xcdatamodel; sourceTree = "<group>"; };
 		9F458A6A1D1ADE410087D347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		9F458A7F1D1ADE410087D347 /* MobileMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F458A831D1ADE410087D347 /* MobileMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMapperUITests.swift; sourceTree = "<group>"; };
 		9F458A851D1ADE410087D347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F458A911D1ADE510087D347 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 		9F458A5F1D1ADE410087D347 /* MobileMapper */ = {
 			isa = PBXGroup;
 			children = (
+				9F458A911D1ADE510087D347 /* MapViewController.swift */,
 				9F458A601D1ADE410087D347 /* AppDelegate.swift */,
-				9F458A621D1ADE410087D347 /* ViewController.swift */,
 				9F458A641D1ADE410087D347 /* Main.storyboard */,
 				9F458A6A1D1ADE410087D347 /* Assets.xcassets */,
 				9F458A6C1D1ADE410087D347 /* LaunchScreen.storyboard */,
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F458A691D1ADE410087D347 /* MobileMapper.xcdatamodeld in Sources */,
-				9F458A631D1ADE410087D347 /* ViewController.swift in Sources */,
+				9F458A921D1ADE510087D347 /* MapViewController.swift in Sources */,
 				9F458A611D1ADE410087D347 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
