@@ -39,14 +39,37 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //display pin on map in Mobile Makers location
         mapView.addAnnotation(mobileMakersAnnotation)
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //find Grand Canyon on map
+        showNewPlace("Grand Canyon")
+        
     }
     
+    //converts string name for address to coordinates, place on map
+    func showNewPlace(address: String)
+    {
+        //create new GeoCoder object
+        let geoCoder = CLGeocoder()
+        
+        //get String location as coordinates
+        //geoCoder takes the string from above and returns an array of "placemarks" for 
+        //different locations of string
+        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+            for place in placemarks!
+            {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = place.location!.coordinate
+                
+                //set pin title
+                annotation.title = place.name
+                
+                //add to map
+                self.mapView.addAnnotation(annotation)
+            }
+        }
+        
+    }
 
+    
     /*
     // MARK: - Navigation
 
