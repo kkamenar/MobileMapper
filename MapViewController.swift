@@ -13,9 +13,11 @@ import MapKit
 
 //add new protocol: MKMapViewDeleate
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
     
     //create a custom annotation, contains coordinates
     let mobileMakersAnnotation = MKPointAnnotation()
@@ -24,6 +26,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         mapView.delegate = self
+        locationManager.delegate = self
+        
+        //permission to get current location while app is running in the foreground
+        //permission from info.plist
+        locationManager.requestWhenInUseAuthorization()
+        mapView.showsUserLocation = true
         
         //create annotation using coordinates of Mobile Makers
         let latitude : Double = 41.89373984
@@ -38,6 +46,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         //display pin on map in Mobile Makers location
         mapView.addAnnotation(mobileMakersAnnotation)
+        
+        //center map on Mobile Makers Location
+        let span = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
+        let center = mobileMakersAnnotation.coordinate
+        
+        //let center = mapView.userLocation.coordinate
+        
+        let region = MKCoordinateRegion(center: center, span: span)
+        
+        //apply region to map
+        mapView.setRegion(region, animated: false)
         
         //find Grand Canyon on map
         showNewPlace("Grand Canyon")
@@ -66,6 +85,28 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self.mapView.addAnnotation(annotation)
             }
         }
+        
+    }
+    
+    //for every pin on the map, add an annotation
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        //customize pin and return it to the map
+        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        pin.canShowCallout = true
+        
+        
+        //add info button; can customize this button to do something
+        let button = UIButton(type: UIButtonType.DetailDisclosure)
+        
+        //add button to pin view when clicked
+        pin.rightCalloutAccessoryView = button
+        
+        //add image to pin view when clicked
+        pin.detailCalloutAccessoryView = UIImageView(image: UIImage(named: "MMLogo"))
+        
+        //send pin back to the map
+        return pin
         
     }
 
