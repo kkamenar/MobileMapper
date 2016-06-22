@@ -102,8 +102,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //add button to pin view when clicked
         pin.rightCalloutAccessoryView = button
         
-        //add image to pin view when clicked
-        pin.detailCalloutAccessoryView = UIImageView(image: UIImage(named: "MMLogo"))
+        //add image to pin view when Mobile Makers pin is clicked
+        if annotation.isEqual(mobileMakersAnnotation)
+        {
+            pin.detailCalloutAccessoryView = UIImageView(image: UIImage(named: "MMLogo"))
+        }
         
         //send pin back to the map
         return pin
